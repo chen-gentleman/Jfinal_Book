@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>借书</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div align="center">
+    <form class="form-inline" method="post" action="/book/findBookByBookName">
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" name="book.bookName" class="form-control" id="exampleInputAmount" placeholder="请输入关键字">
+                <div class="input-group-addon"><img width="25"  lang="25" src="/pic/find.jpg"></div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">搜索</button>
+    </form>
+
+    <table class="table table-bordered">
+        <tbody>
+        <tr>
+            <th width="4%">书本id</th>
+            <th width="35%">书本名字</th>
+            <th width="12%">封面</th>
+        </tr>
+
+        #if(bookByName)
+        #for(x : bookByName.getList())
+        <tr>
+            <td style="text-align:left;">#(x.id)</td>
+            <td style="text-align:left;"><a href="/book/book_detitle?id=#(x.id)">#(x.bookName)</a></td>
+            <td style="text-align:left;">
+                <img width="90" length="90"  src=#(x.bookPic) alt=#(x.bookName) class="img-thumbnail">
+            </td>
+        </tr>
+        #end
+        #end
+
+        </tbody>
+    </table>
+
+    #if(bookByName)
+    #@paginate(bookByName.pageNumber, bookByName.totalPage, "/book/findBookByBookName")
+    #end
+
+</div>
+
+</body>
+</html>

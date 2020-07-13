@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试指令</title>
+</head>
+<body>
+#(value)
+
+#(user.userName ??)
+
+#(1 > 2 ? "y" : "n")
+
+#(seoTitle ?? "JFinal 俱乐部")
+<br>
+
+#for(l : list)
+    #(for.index)
+    #(for.size)
+    #(l)
+    <br>
+
+#end
+
+<br>
+<input name="abc" value="#option('abc')"/>
+<br>
+
+<p align="center">#option('abc')</p>
+
+</body>
+</html>

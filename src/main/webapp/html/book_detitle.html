@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>书本详情</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+</form>
+
+<table class="table table-bordered">
+    <tbody>
+    <tr>
+        <th width="4%">书本id</th>
+        <th width="35%">书本名字</th>
+        <th width="12%">作者</th>
+        <th width="12%">出版社</th>
+        <th width="12%">封面</th>
+    </tr>
+
+    <tr>
+        <td style="text-align:left;">#(book.id)</td>
+        <td style="text-align:left;">#(book.bookName)</td>
+        <td style="text-align:left;">#(book.bookAuthor)</td>
+        <td style="text-align:left;">#(book.bookPress)</td>
+        <td style="text-align:left;">
+            <img width="90" length="90"  src=#(book.bookPic) alt=#(book.bookName) class="img-thumbnail">
+        </td>
+    </tr>
+
+    </tbody>
+
+</table>
+<button>借它</button>
+
+</body>
+</html>
